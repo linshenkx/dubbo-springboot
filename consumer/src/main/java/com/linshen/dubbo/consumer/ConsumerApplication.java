@@ -1,12 +1,12 @@
-package com.linshen.dubbo;
+package com.linshen.dubbo.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DubboApplication {
+public class ConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DubboApplication.class, args);
+        SpringApplication.run(ConsumerApplication.class, args);
     }
 }
