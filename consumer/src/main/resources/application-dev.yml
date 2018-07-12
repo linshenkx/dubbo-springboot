@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: linshen-dubbo-consumer1
+server:
+  port: 9091
+
+# Service version
+hello:
+  service:
+    version: 1.0.0
+
+dubbo:
+  application:
+    id: linshen-dubbo-consumer-id1
+    name: linshen-dubbo-consumer-name1
+    ## Legacy QOS Config
+    qos-port: 22223
+#  protocol:
+#    id: dubbo
+#    name: dubbo
+#    port: 12345
+  registry:
+    protocol: zookeeper
+    address: 116.196.113.170:2181,116.196.113.170:2182,116.196.113.170:2183
+    id: lin-registry-1
+management:
+  endpoint:
+    dubbo-configs:
+      enabled: true
+    dubbo:
+      enabled: true
+    dubbo-services:
+      enabled: true
+    dubbo-properties:
+      enabled: true
+    dubbo-shutdown:
+      enabled: true
+    dubbo-references:
+      enabled: true
+  health:
+    dubbo:
+      status:
+        defaults: memory
+        extras: load,threadpool
+  endpoints:
+    web:
+      exposure:
+        include: '*'
