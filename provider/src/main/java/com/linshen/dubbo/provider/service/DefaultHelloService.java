@@ -1,6 +1,5 @@
 package com.linshen.dubbo.provider.service;
 
-import com.alibaba.boot.dubbo.actuate.endpoint.DubboEndpoint;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.linshen.dubbo.baseinterface.service.HelloService;
 /**
@@ -12,13 +11,16 @@ import com.linshen.dubbo.baseinterface.service.HelloService;
 @Service(
         version = "${hello.service.version}",
         application = "${dubbo.application.id}",
-        protocol = "${dubbo.protocol.id}",
         registry = "${dubbo.registry.id}"
 )
 public class DefaultHelloService implements HelloService {
     @Override
     public String sayHello(String name) {
-        DubboEndpoint dubboEndpoint;
         return "Hello "+name+" !";
+    }
+
+    @Override
+    public String sayGoodbye(String name) {
+        return "Goodbye "+name+" !";
     }
 }

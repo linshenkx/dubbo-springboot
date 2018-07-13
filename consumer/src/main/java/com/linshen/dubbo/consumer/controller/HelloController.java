@@ -14,20 +14,23 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description: TODO
  */
 @RestController
-@RequestMapping("/hello")
 public class HelloController {
 
     @Reference(
             version = "${hello.service.version}",
             application = "${dubbo.application.id}",
-//            url = "dubbo://localhost:12345"
             registry = "${dubbo.registry.id}"
     )
     private HelloService helloService;
 
-    @GetMapping("/{name}")
+    @GetMapping("hello/{name}")
     public String sayHello(@PathVariable String name){
         return helloService.sayHello(name);
+    }
+
+    @GetMapping("goodbye/{name}")
+    public String sayGoodbye(@PathVariable String name){
+        return helloService.sayGoodbye(name);
     }
 
 }

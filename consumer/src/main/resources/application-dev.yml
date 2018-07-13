@@ -8,17 +8,10 @@ server:
 hello:
   service:
     version: 1.0.0
-
 dubbo:
   application:
     id: linshen-dubbo-consumer-id1
     name: linshen-dubbo-consumer-name1
-    ## Legacy QOS Config
-    qos-port: 22223
-#  protocol:
-#    id: dubbo
-#    name: dubbo
-#    port: 12345
   registry:
     protocol: zookeeper
     address: 116.196.113.170:2181,116.196.113.170:2182,116.196.113.170:2183

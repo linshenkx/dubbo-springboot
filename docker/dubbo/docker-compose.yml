@@ -1,0 +1,10 @@
+
+provider:
+ build: ./provider
+ ports:
+   - 9090:9090
+
+consumer:
+ build: ./consumer
+ ports:
+   - 9091:9091

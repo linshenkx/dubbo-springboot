@@ -38,9 +38,9 @@ dubbo:
     id: dubbo
     status: server
   application:
-    qos-enable: true
     name: linshen-dubbo-provider-name1
     id: linshen-dubbo-provider-id1
+    qos-enable: true
     qos-port: 22222
   scan:
     basePackages: com.linshen.dubbo.provider.service
